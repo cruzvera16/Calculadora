@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     var leftValStr = ""
     var rightValStr = ""
     var currentOperation: operation = operation.empty
+    var nextOperation: operation = operation.empty
     var result = ""
     
     var btnSound: AVAudioPlayer!
@@ -88,14 +89,15 @@ class ViewController: UIViewController {
                         result = "\(Double(leftValStr)! / Double(rightValStr)!)"
                     } else if currentOperation == operation.add {
                         result = "\(Double(leftValStr)! + Double(rightValStr)!)"
-                    }  else if currentOperation == operation.subtract {
+                    } else if currentOperation == operation.subtract {
                         result = "\(Double(leftValStr)! - Double(rightValStr)!)"
-                    }
+                    } 
                 
                 leftValStr = result
                 outputLabel.text = result
-                currentOperation = op
+
             }
+                currentOperation = op
             
 
             
@@ -106,6 +108,7 @@ class ViewController: UIViewController {
             currentOperation = op
         }
     }
+    
     
     func playSound() {
         if btnSound.playing {
