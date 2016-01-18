@@ -80,7 +80,6 @@ class ViewController: UIViewController {
         if currentOperation != operation.empty {
             //do some math
             if runningNumber != "" {
-                if currentOperation != operation.equal {
                     rightValStr = runningNumber
                     runningNumber = ""
                     if currentOperation == operation.multiply {
@@ -92,16 +91,10 @@ class ViewController: UIViewController {
                     }  else if currentOperation == operation.subtract {
                         result = "\(Double(leftValStr)! - Double(rightValStr)!)"
                     }
-                }
-//                else {
-//                    result = "\(Double(leftValStr)! * 1)"
-//                    currentOperation = operation.empty
-//                    rightValStr = ""
-//                }
                 
                 leftValStr = result
-                currentOperation = op
                 outputLabel.text = result
+                currentOperation = op
             }
             
 
